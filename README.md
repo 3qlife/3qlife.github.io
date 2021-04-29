@@ -1,1 +1,0 @@
-# 3qlife.github.io
