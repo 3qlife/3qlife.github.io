@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>YouTubeを読む</title>
+  <meta name="description" content="YouTubeの内容を文字でメモするサイトです">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+
+<body>
+  <header id="header">
+    <h1>YouTubeを読む</h1>
+    <nav>
+      <ul>
+        <li class="has-child"><a href="#">技術</a>
+        </li>
+        <li class="has-child"><a href="#">恋愛</a>
+          <ul>
+            <li><a href="#">津崎まみ</a>
+              <!--
+              <ul>
+                <li><a href="#">津崎まみ</a></li>
+              </ul>
+              -->
+            </li>
+          </ul>
+        </li>
+        <li class="has-child"><a href="#">文化</a>
+        </li>
+        <li class="has-child"><a href="#">生活</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="main">
+      <div class="main-contents">
+        <div class="memo">
+          <a href="" id="close_link" onclick="closeIFrame()" class="close_link">×</a><br>
+          <iframe name="display" title="YouTube" width="0" height="0" src="" frameborder="0"
+            class="videoIframe"></iframe>
+          <p>■概要</p>
+          <p>
+            　人がハマったりとか中毒になる理由は楽しいとか嬉しいっていういい感情と、つらい・苦しい・不安だという悪い感情が交互に来た時に人は中毒になる。人が恋焦がれる正体は感情の行き来によるギャップだ。飴と鞭と呼ばれたり、つり橋効果とよばれるもの。
+          </p>
+          <p>■ポイント</p>
+          <p>　①心地よさと、嫌な気持ちを交互に味わったとき、人はハマる。</p>
+          <p>　②人口的に演出できる。</p>
+          <p>　③人工的にハマられてると思うと、醒めちゃう方も多い。</p>
+          <p>　④「良い感情」と「嫌な感情」に、しっかりメリハリ（ギャップ）をつける事。</p>
+          <p>　⑤相手にとって心地よい存在なる。</p>
+          <p>
+            　⑥相手を不安にさせるには、無関心。悪口とか、文句とか、誹謗中傷とかネガティブな要素を直接ぶつけることはだめ。関心がなくなるってめちゃくちゃ相手に不安させる。怒られても無視するすることで相手はもっともっと不安になる。ここぞという時に人を不安にさせることができる人はモテる。
+          </p>
+          <p>　⑦中途半端にふらふらするよりも、まずしっかりいい方向に寄せていくことは大切。</p>
+          <p>　⑧人の感情って思ってるよりも簡単に動かせる。</p>
+          <p>　⑨自分の感情はぶれないこと、相手の気持ちだけを動かすっていう意識は大切。</p>
+          <p>■運用例</p>
+          <p>　①軽薄と思ったけど実は誠実</p>
+          <p>　②堅苦しいと思ったけどしゃべってみたらめちゃくちゃ面白い</p>
+          <p>　③近寄りがたい見た目の裏にとても優しい</p>
+          <p>　④復縁も遠距離も不倫という障害があるというのは悪い感情があるからだ。だけど、会えたりとか、連絡が来たりとか一気に感情が動かされる。でも連絡が途切れるとか冷たい対応されるとかで感情はまた揺さぶる。
+          </p>
+        </div>
+      </div>
+      <div class="right-navi">
+      </div>
+
+    </div>
+    <div class="left-navi">
+      ■チャンネル：津崎まみ
+      <ul>
+        <li>
+          【悪用厳禁】好きな人が１００％あなたにハマる！あなたに依存させる方法【有料級】
+          <a href="https://www.youtube.com/embed/_Xbubk0c9uQ?autoplay=1&playsinline=1" target="display"
+            onclick="displayIFrame()">動画</a>
+        </li>
+      </ul>
+    </div>
+    <!--/main-->
+  </main>
+
+  <footer id="footer">
+    <small>&copy; copyright.</small>
+  </footer>
+  <script src="javascript/jquery-3.4.1.min.js"></script>
+  <script src="javascript/common.js"></script>
+  <script src="javascript/video.js"></script>
+</body>
+
+</html>
