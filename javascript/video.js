@@ -11,40 +11,34 @@ function changeDisplay() {
 }
 
 function displayIFrame() {
-  $(".videoIframe").css("width", "640");
-  $(".videoIframe").css("height", "360");
-  $(".videoIframe").css("display", "inline");
-  if (!videoSound) {
-    $(".videoIframe").attr("src", videoUrl);
+  if(!videoDisplay) {
+    $(".videoIframe").css("width", "640");
+    $(".videoIframe").css("height", "360");
+    $(".videoIframe").css("display", "inline");
+    if (!videoSound) {
+      $(".videoIframe").attr("src", videoUrl);
+    }
+    $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
+    videoDisplay = true;
+    videoSound = true;
   }
-  $(".change_display_button").text("非表示");
-  videoDisplay = true;
-  videoSound = true;
-  $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
 }
 
 function closeIFrame() {
-  $(".content_iframe").height($(".content_iframe").height()+$(".videoIframe").height());
-  $(".videoIframe").css("display", "none");
-  $(".change_display_button").text("表示");
-  videoDisplay = false;
+  if(videoDisplay) {
+    $(".videoIframe").css("display", "none");
+    $(".content_iframe").height($(".content_iframe").height()+$(".videoIframe").height());
+    videoDisplay = false;
+  }
 }
 
 function clickLeftNavi(video_url,content_uri) {
   videoUrl = video_url;
+  $(".videoIframe").attr("src", "");
+  closeIFrame();
+  $(".content_iframe").attr("src", "contents/" + content_uri);
   videoDisplay = false;
   videoSound = false;
-  $(".videoIframe").attr("src", videoUrl);
-  closeIFrame();
-
-  
-
-  var elm = document.getElementById("parentframe");
-  elm.src="contents/" + content_uri;
-  elm.style.height = elm.contentDocument.body.scrollHeight + "px";
-
-  console.log("elm.style.height=" + elm.style.height);
-
 }
 
 $(function () {
