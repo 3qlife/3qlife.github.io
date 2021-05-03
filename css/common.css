@@ -240,3 +240,9 @@ section:nth-child(2n){
   height:745px;
   overflow-y: scroll;
 }
+
+.video {
+  display:block;
+  /* position:absolute;*/
+  /* top:170px; */
+}
