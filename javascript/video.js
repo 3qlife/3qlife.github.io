@@ -1,6 +1,6 @@
 var videoDisplay = false;
 var videoSound = false;
-var videoUrl = "https://www.youtube.com/embed/_Xbubk0c9uQ?autoplay=1&playsinline=1";
+var videoUrl;
 
 function changeDisplay() {
   if(videoDisplay) {
@@ -26,5 +26,9 @@ function displayIFrame() {
     $(".videoIframe").css("visibility", "hidden");
     $(".change_display_button").text("動画表示");
     videoDisplay = false;
+  }
+
+  function clickLeftNavi(url) {
+    videoUrl=url;
   }
   
