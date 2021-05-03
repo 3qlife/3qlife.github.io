@@ -29,7 +29,7 @@ nav ul li a{
   display: block;
   text-decoration: none;
   color: rgb(0, 0, 0);
-  padding:20px 35px;
+  padding:10px 35px;
   transition:all .3s;
 }
 
@@ -48,7 +48,7 @@ nav ul li.has-child::before{
   content:'';
   position: absolute;
   left:15px;
-  top:25px;
+  top:15px;
   width:6px;
   height:6px;
   border-top: 2px solid #999;
@@ -76,7 +76,7 @@ nav li.has-child ul{
     /*絶対配置で位置を指定*/
   position: absolute;
   left:0;
-  top:62px;
+  top:44px;
   z-index: 4;
     /*形状を指定*/
   background:#28BFE7;
@@ -209,31 +209,32 @@ section:nth-child(2n){
   background:#f3f3f3; 
 }
 
-.main-contents, .left-navi, .right-navi {
+.middle, .left-navi, .right-navi {
   height:auto;
   min-height:800px;
 }
-.main-contents {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  float: left;
-  width: 80%;
-}
+
 .left-navi {
   background-color: rgb(228, 236, 236);
   color: rgb(0, 0, 0);
   width: 20%;
+  float: left;
+}
+.content{
+  width: 80%;
   float: right;
+}
+.middle {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  float: left;
+  width: 80%;
 }
 .right-navi {
   background-color: rgb(221, 221, 221);
   color: rgb(0, 0, 0);
   float: right;
   width: 20%;
-}
-.main{
-  width: 80%;
-  float: right;
 }
 /*
 .memo {

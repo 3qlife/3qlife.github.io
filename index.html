@@ -22,11 +22,9 @@
         <li class="has-child"><a href="#">恋愛</a>
           <ul>
             <li><a href="#">津崎まみ</a>
-              <!--
               <ul>
                 <li><a href="#">津崎まみ</a></li>
               </ul>
-              -->
             </li>
           </ul>
         </li>
@@ -39,33 +37,38 @@
   </header>
 
   <main>
-    <div class="main">
-      <div class="main-contents">
-        <button class="change_display_button" onclick="changeDisplay()">動画表示</button>
-        <div class="memo">
-          <iframe width="0" height="0" src="" frameborder="0" class="videoIframe"></iframe>
-            <br>
-          <iframe name="content_iframe" class="content_iframe">
-          </iframe>
-        </div>
-      </div>
-      <div class="right-navi">
-      </div>
-    </div>
     <div class="left-navi">
       ■チャンネル：津崎まみ
       <ul>
         <li>
-          <a href="contents/001.html" target="content_iframe" onclick="clickLeftNavi('https://www.youtube.com/embed/_Xbubk0c9uQ?autoplay=1&playsinline=1');">【悪用厳禁】好きな人が１００％あなたにハマる！あなたに依存させる方法【有料級】</a>
+          <a href="contents/001.html" target="content_iframe"
+            onclick="clickLeftNavi('https://www.youtube.com/embed/_Xbubk0c9uQ?autoplay=1&playsinline=1');">【悪用厳禁】好きな人が１００％あなたにハマる！あなたに依存させる方法【有料級】</a>
         </li>
       </ul>
     </div>
-    <!--/main-->
+    <div class="content">
+
+      <div class="middle">
+        <button class="change_display_button" onclick="changeDisplay()">動画表示</button>
+        <div class="memo">
+          <iframe width="0" height="0" src="" frameborder="0" class="videoIframe"></iframe>
+          <br>
+          <iframe name="content_iframe" class="content_iframe">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="right-navi">
+      </div>
+
+    </div>
+
   </main>
 
   <footer id="footer">
     <small>&copy; copyright.</small>
   </footer>
+
   <script src="javascript/jquery-3.4.1.min.js"></script>
   <script src="javascript/common.js"></script>
   <script src="javascript/video.js"></script>
