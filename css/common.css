@@ -246,3 +246,22 @@ main {
   height: auto;
   border: 0;
 }
+
+@media screen and (max-width:768px){
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .left-navi {
+    width: 100%;
+  }
+  .middle {
+    width: 100%;
+  }
+  .right-navi {
+    width: 100%;
+  }
+}

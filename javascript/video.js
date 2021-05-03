@@ -72,16 +72,16 @@ $(window).resize(function() {
   $(".content_iframe").height($(".middle").height()-25);
   if (videoDisplay) {
     $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
+    if(window.innerWidth<640) {
+      $(".videoIframe").css("width", window.innerWidth);
+      $(".videoIframe").css("height", window.innerWidth*3/4);
+    } else {
+      $(".videoIframe").css("width", "640");
+      $(".videoIframe").css("height", "360");
+    }
   }
   if($(".content_iframe").height()<200) {
     $(".middle").height($(".videoIframe").height() + 200);
     $(".content_iframe").height(200);
-  }
-  if(window.innerWidth<640) {
-    $(".videoIframe").css("width", window.innerWidth);
-    $(".videoIframe").css("height", window.innerWidth*3/4);
-  } else {
-    $(".videoIframe").css("width", "640");
-    $(".videoIframe").css("height", "360");
   }
 });
