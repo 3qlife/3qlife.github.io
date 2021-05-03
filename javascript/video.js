@@ -12,8 +12,15 @@ function changeDisplay() {
 
 function displayIFrame() {
   if(!videoDisplay) {
-    $(".videoIframe").css("width", "640");
-    $(".videoIframe").css("height", "360");
+
+    if(window.innerWidth<640) {
+      $(".videoIframe").css("width", window.innerWidth);
+      $(".videoIframe").css("height", window.innerWidth*3/4);
+    } else {
+      $(".videoIframe").css("width", "640");
+      $(".videoIframe").css("height", "360");
+    }
+
     $(".videoIframe").css("display", "inline");
     if (!videoSound) {
       $(".videoIframe").attr("src", videoUrl);
@@ -40,11 +47,12 @@ function closeIFrame() {
   }
 }
 
-function clickLeftNavi(video_url,content_uri) {
-  videoUrl = video_url;
+function clickLeftNavi(videoId,contentId) {
+  
+  videoUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&playsinline=1';
   $(".videoIframe").attr("src", "");
   closeIFrame();
-  $(".content_iframe").attr("src", "contents/" + content_uri);
+  $(".content_iframe").attr("src", "contents/" + contentId + ".html");
   videoDisplay = false;
   videoSound = false;
 }
@@ -68,5 +76,12 @@ $(window).resize(function() {
   if($(".content_iframe").height()<200) {
     $(".middle").height($(".videoIframe").height() + 200);
     $(".content_iframe").height(200);
+  }
+  if(window.innerWidth<640) {
+    $(".videoIframe").css("width", window.innerWidth);
+    $(".videoIframe").css("height", window.innerWidth*3/4);
+  } else {
+    $(".videoIframe").css("width", "640");
+    $(".videoIframe").css("height", "360");
   }
 });
