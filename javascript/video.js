@@ -20,9 +20,11 @@ function displayIFrame() {
   $(".change_display_button").text("非表示");
   videoDisplay = true;
   videoSound = true;
+  $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
 }
 
 function closeIFrame() {
+  $(".content_iframe").height($(".content_iframe").height()+$(".videoIframe").height());
   $(".videoIframe").css("display", "none");
   $(".change_display_button").text("表示");
   videoDisplay = false;
@@ -32,7 +34,8 @@ function clickLeftNavi(video_url,content_uri) {
   videoUrl = video_url;
   videoDisplay = false;
   videoSound = false;
-  displayIFrame();
+  $(".videoIframe").attr("src", videoUrl);
+  closeIFrame();
 
   
 
@@ -44,27 +47,16 @@ function clickLeftNavi(video_url,content_uri) {
 
 }
 
-/*
-// 子画面の要素を取得
-var elm = document.getElementById("parentframe");
- 
-// 子画面のコンテンツサイズに合わせてサイズを変更する関数
-function changeParentHeight(){
-  elm.style.height = elm.contentWindow.document.body.scrollHeight + "px";
-}
- 
-// 親画面 iframe の高さを変更するイベント
-// 1. 子画面の読み込み完了時点で処理を行う
-elm.contentWindow.onload = function(){ changeParentHeight(); };
- 
-// 2. 子画面のウィンドウサイズ変更が完了した時点で処理を行う
-var timer = 0;
-elm.contentWindow.onresize = function () {
-  if (timer > 0) {
-    clearTimeout(timer);
+$(function () {
+  $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height()-20);
+  $(".content_iframe").height($(".middle").height()-25);
+  $(".left-navi a:first-child").click();
+});
+
+$(window).resize(function() {
+  $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height());
+  $(".content_iframe").height($(".middle").height()-25);
+  if (videoDisplay) {
+    $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
   }
-  timer = setTimeout(function () {
-    changeParentHeight();
-  }, 100);
-};
-*/
+});

@@ -224,7 +224,7 @@ main {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   width: 65%;
-  min-width: 640px;
+  min-width: 300px;
 }
 .right-navi {
   background-color: rgb(221, 221, 221);
@@ -244,6 +244,5 @@ main {
 .content_iframe {
   width: 100%;
   height: auto;
-  min-height: 800px;
   border: 0;
 }

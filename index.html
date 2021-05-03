@@ -14,7 +14,7 @@
 
 <body>
   <header id="header">
-    <h1>YouTubeを読む</h1>
+    <h1>YouTubeを読む<img src="images/video.gif"  class="change_display_button" onclick="changeDisplay()"  alt="表示"></h1>
     <nav>
       <ul>
         <li class="has-child"><a href="#">技術</a>
@@ -46,9 +46,7 @@
       </ul>
     </div>
 
-    <div class="middle">
-      <img src="images/video.gif"  class="change_display_button" onclick="changeDisplay()"  alt="表示">
-      <br>
+    <div class="middle" id="middle">
       <iframe width="0" height="0" src="" frameborder="0" class="videoIframe"></iframe>
       <br>
       <iframe id="parentframe" name="content_iframe" class="content_iframe">
