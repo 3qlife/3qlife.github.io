@@ -58,11 +58,7 @@ function clickLeftNavi(videoId,contentId) {
 }
 
 $(function () {
-  // if(window.innerWidth<640) {
-    $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height());
-  // } else {
-  //   $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height()-20);
-  // }
+  $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height()-20);
   $(".content_iframe").height($(".middle").height()-25);
   if($(".content_iframe").height()<200) {
     $(".middle").height($(".videoIframe").height() + 200);
