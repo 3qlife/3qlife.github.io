@@ -259,4 +259,5 @@ section:nth-child(2n){
 .content_iframe {
   width: 975px;
   height: 500px;
+  border: 0;
 }
