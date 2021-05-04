@@ -12,24 +12,12 @@ function changeDisplay() {
 
 function displayIFrame() {
   if(!videoDisplay) {
-
-    if(window.innerWidth<640) {
-      $(".videoIframe").css("width", window.innerWidth);
-      $(".videoIframe").css("height", window.innerWidth*3/4);
-    } else {
-      $(".videoIframe").css("width", "640");
-      $(".videoIframe").css("height", "360");
-    }
-
+    resizeVideoIframe()
     $(".videoIframe").css("display", "inline");
     if (!videoSound) {
       $(".videoIframe").attr("src", videoUrl);
     }
-    $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
-    if($(".content_iframe").height()<200) {
-      $(".main").height($(".videoIframe").height() + 200);
-      $(".content_iframe").height(200);
-    }
+    resizeContentIframe(-$(".videoIframe").height());
     videoDisplay = true;
     videoSound = true;
   }
@@ -38,11 +26,7 @@ function displayIFrame() {
 function closeIFrame() {
   if(videoDisplay) {
     $(".videoIframe").css("display", "none");
-    $(".content_iframe").height($(".content_iframe").height()+$(".videoIframe").height());
-    if($(".content_iframe").height()<200) {
-      $(".main").height($(".videoIframe").height() + 200);
-      $(".content_iframe").height(200);
-    }
+    resizeContentIframe($(".videoIframe").height());
     videoDisplay = false;
   }
 }
@@ -70,18 +54,31 @@ $(function () {
 $(window).resize(function() {
   $(".main").height(window.innerHeight-$(".main").offset().top-$(".footer").height());
   $(".content_iframe").height($(".main").height()-25);
-  if (videoDisplay) {
-    $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
-    if(window.innerWidth<640) {
-      $(".videoIframe").css("width", window.innerWidth);
-      $(".videoIframe").css("height", window.innerWidth*3/4);
-    } else {
-      $(".videoIframe").css("width", "640");
-      $(".videoIframe").css("height", "360");
-    }
-  }
   if($(".content_iframe").height()<200) {
     $(".main").height($(".videoIframe").height() + 200);
     $(".content_iframe").height(200);
   }
+  if (videoDisplay) {
+    resizeContentIframe(-$(".videoIframe").height());
+    resizeVideoIframe()
+  }
 });
+
+function resizeVideoIframe(){
+
+  if(window.innerWidth<640) {
+    $(".videoIframe").css("width", window.innerWidth);
+    $(".videoIframe").css("height", window.innerWidth*3/4);
+  } else {
+    $(".videoIframe").css("width", "640");
+    $(".videoIframe").css("height", "360");
+  }
+}
+
+function resizeContentIframe(px){
+  $(".content_iframe").height($(".content_iframe").height()+px);
+  if($(".content_iframe").height()<200) {
+    $(".main").height($(".videoIframe").height() + 200);
+    $(".content_iframe").height(200);
+  }
+}
