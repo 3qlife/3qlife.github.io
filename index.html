@@ -7,63 +7,52 @@
   <meta name="description" content="YouTubeの内容を文字でメモするサイトです">
   <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
-
 <body>
-  <header id="header">
-    <h1>YouTubeを読む<img src="images/video.gif"  class="change_display_button" onclick="changeDisplay()"  alt="表示"></h1>
-    <nav>
-      <ul>
-        <li class="has-child"><a href="#">技術</a>
-        </li>
-        <li class="has-child"><a href="#">恋愛</a>
-          <ul>
-            <li><a href="#">津崎まみ</a>
-              <ul>
-                <li><a href="#">津崎まみ</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="has-child"><a href="#">文化</a>
-        </li>
-        <li class="has-child"><a href="#">生活</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <div class="left-navi">
+  <div class="wrapper">
+    <header class="header">
+      <h1>YouTubeを読む<img src="images/video.gif"  class="change_display_button" onclick="changeDisplay()"  alt="表示"></h1>
+      <nav>
+        <ul>
+          <li class="has-child"><a href="#">技術</a>
+          </li>
+          <li class="has-child"><a href="#">恋愛</a>
+            <ul>
+              <li><a href="#">津崎まみ</a>
+                <ul>
+                  <li><a href="#">津崎まみ</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="has-child"><a href="#">文化</a>
+          </li>
+          <li class="has-child"><a href="#">生活</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <article class="main">
+      <div class="framContainer">
+        <iframe width="0" height="0" src="" frameborder="0" class="videoIframe"></iframe>
+        <iframe class="content_iframe"></iframe>
+      </div>
+    </article>
+    <aside class="aside aside-1">
       ■チャンネル：津崎まみ
       <ul>
         <li>
           <a href="#" onclick="clickLeftNavi('_Xbubk0c9uQ','001');">【悪用厳禁】好きな人が１００％あなたにハマる！あなたに依存させる方法【有料級】</a>
         </li>
       </ul>
-    </div>
-
-    <div class="middle">
-      <iframe width="0" height="0" src="" frameborder="0" class="videoIframe"></iframe>
-      <br>
-      <iframe class="content_iframe">
-      </iframe>
-    </div>
-
-    <div class="right-navi">
-    </div>
-  </main>
-
-  <footer class="footer">
-    <small>&copy; copyright.</small>
-  </footer>
-
+    </aside>
+    <aside class="aside aside-2"></aside>
+    <footer class="footer">Footer</footer>
+  </div>
   <script src="javascript/jquery-3.4.1.min.js"></script>
   <script src="javascript/common.js"></script>
   <script src="javascript/video.js"></script>
 </body>
-
 </html>

@@ -27,7 +27,7 @@ function displayIFrame() {
     }
     $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
     if($(".content_iframe").height()<200) {
-      $(".middle").height($(".videoIframe").height() + 200);
+      $(".main").height($(".videoIframe").height() + 200);
       $(".content_iframe").height(200);
     }
     videoDisplay = true;
@@ -40,7 +40,7 @@ function closeIFrame() {
     $(".videoIframe").css("display", "none");
     $(".content_iframe").height($(".content_iframe").height()+$(".videoIframe").height());
     if($(".content_iframe").height()<200) {
-      $(".middle").height($(".videoIframe").height() + 200);
+      $(".main").height($(".videoIframe").height() + 200);
       $(".content_iframe").height(200);
     }
     videoDisplay = false;
@@ -58,18 +58,18 @@ function clickLeftNavi(videoId,contentId) {
 }
 
 $(function () {
-  $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height()-20);
-  $(".content_iframe").height($(".middle").height()-25);
-  if($(".content_iframe").height()<200) {
-    $(".middle").height($(".videoIframe").height() + 200);
-    $(".content_iframe").height(200);
-  }
-  $(".left-navi a:first-child").click();
+ $(".main").height(window.innerHeight-$(".main").offset().top-$(".footer").height()-28);
+ $(".content_iframe").height($(".main").height()-25);
+ if($(".content_iframe").height()<200) {
+   $(".main").height($(".videoIframe").height() + 200);
+   $(".content_iframe").height(200);
+ }
+  $(".aside-1 a:first-child").click();
 });
 
 $(window).resize(function() {
-  $(".middle").height(window.innerHeight-$(".middle").offset().top-$(".footer").height());
-  $(".content_iframe").height($(".middle").height()-25);
+  $(".main").height(window.innerHeight-$(".main").offset().top-$(".footer").height());
+  $(".content_iframe").height($(".main").height()-25);
   if (videoDisplay) {
     $(".content_iframe").height($(".content_iframe").height()-$(".videoIframe").height());
     if(window.innerWidth<640) {
@@ -81,7 +81,7 @@ $(window).resize(function() {
     }
   }
   if($(".content_iframe").height()<200) {
-    $(".middle").height($(".videoIframe").height() + 200);
+    $(".main").height($(".videoIframe").height() + 200);
     $(".content_iframe").height(200);
   }
 });
